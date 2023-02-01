@@ -1,3 +1,4 @@
+#cashier side system
 from tkinter import *
 from main import*
 from datetime import datetime
