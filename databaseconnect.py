@@ -19,10 +19,21 @@ def store_db(email,token,arrival_time,waiting_time):
         query='insert into tokendata(email,tokenid,arrivaltime,waitingtime) values (%s,%s,%s,%s)'
         values=(email,token,arrival_time,waiting_time)
         cursor.execute(query,values)
-        cnx.commit() 
+        cnx.commit()
+
 def providelength():
         sql = """SELECT count(*) as tot FROM tokendata"""
         cursor.execute(sql)
         data=cursor.fetchone()
         data=data[0]
         return data
+def check_user(email):
+        query="SELECT email FROM tokendata WHERE email = %s"
+        values=email
+        cursor.execute(query,(values,))
+        result = cursor.fetchone()
+        cnx.commit
+        if result:
+                return True
+        else:
+                return False

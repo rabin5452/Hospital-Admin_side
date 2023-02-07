@@ -19,6 +19,7 @@ def login():
 def clearall():
     entry_cashierid.delete(first=0,last=10) 
     entry_cashierpassword.delete(first=0,last=10) 
+    
 if __name__=="__main__":
     root=Tk(className="Bank")
     root.geometry('500x500')
