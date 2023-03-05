@@ -1,10 +1,9 @@
-from databaseconnect import store_db,providelength,check_user
+from databaseconnect import store_db,providelength,check_user,get_minmumtoken,next_token
 token=1
 def start_process():
-    pass
+    early_token=get_minmumtoken()
+    return early_token
 
-def next_process():
-    pass
 
 def stop_process():
     pass

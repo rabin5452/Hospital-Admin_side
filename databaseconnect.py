@@ -37,3 +37,15 @@ def check_user(email):
                 return True
         else:
                 return False
+def get_minmumtoken():
+        query="SELECT tokenid FROM tokendata WHERE tokenid = (SELECT MIN(tokenid) FROM tokendata)"
+        cursor.execute(query)
+        data=cursor.fetchone()
+        data=data[0]
+        return data
+
+def next_token(tokenid):
+        query=f"DELETE FROM tokendata WHERE tokenid ={tokenid}"
+        cursor.execute(query)
+        cnx.commit()
+        
