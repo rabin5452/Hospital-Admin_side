@@ -10,6 +10,7 @@ def login():
         password=entry_cashierpassword.get()
         clearall()
         if cashier_id==cashier_id and password==getdata(cashier_id):
+            root.destroy()
             welcome(cashier_id)
         else:
             messagebox.showwarning("Warning", "Incorrect user or password")
@@ -21,7 +22,7 @@ def clearall():
     entry_cashierpassword.delete(first=0,last=10) 
     
 if __name__=="__main__":
-    root=Tk(className="Bank")
+    root=Tk(className="Cashier-Login")
     root.geometry('500x500')
     lable0=tk.Label(root,text="LOG-IN",font=("Arial",16),justify='center',padx=50,pady=10).grid(column=1,row=0)
     label1=Label(root,text="CashierID",font=("Arial",10),justify='center',padx=50,pady=10).grid(column=0,row=1)
